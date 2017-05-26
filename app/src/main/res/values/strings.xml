@@ -11,4 +11,5 @@
     <string name="menu_home">수능라뗴 홈</string>
     <string name="menu_random_question">임의 문제 풀기</string>
     <string name="menu_settings">설정</string>
+    <string name="menu_visit_web">웹사이트 방문하기</string>
 </resources>
