@@ -1,5 +1,6 @@
 package org.redborn.csatlatte.android.view;
 
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -61,7 +62,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_home) {
             // intent...
         } else if (id == R.id.nav_random_question) {
-
+            Intent intent = new Intent(MainActivity.this, RandomQuestionActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_settings) {
 
         }
