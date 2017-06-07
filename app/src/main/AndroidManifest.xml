@@ -17,6 +17,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.RandomQuestionActivity"
+            android:label="@string/menu_random_question"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
