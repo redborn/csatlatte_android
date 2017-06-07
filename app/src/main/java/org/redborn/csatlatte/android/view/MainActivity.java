@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         adapter.addItem(getResources().getDrawable(R.drawable.ic_menu_pencil), "임의 문제 풀기");
         adapter.addItem(getResources().getDrawable(R.drawable.ic_menu_info), "웹사이트 방문하기");
 
+        // 메인 메뉴 버튼 분기처리
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
