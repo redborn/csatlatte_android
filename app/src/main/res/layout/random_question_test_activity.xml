@@ -2,7 +2,7 @@
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/random_question_drawer_layout"
+    android:id="@+id/random_question_test_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
@@ -11,14 +11,14 @@
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="org.redborn.csatlatte.android.view.RandomQuestionActivity">
+        tools:context="org.redborn.csatlatte.android.view.RandomQuestionTestActivity">
 
         <include
-            layout="@layout/random_question_app_bar"
+            layout="@layout/random_question_test_app_bar"
             android:layout_width="match_parent"
             android:layout_height="180dp" />
 
-        <include layout="@layout/random_question_content" />
+        <include layout="@layout/random_question_test_content" />
 
     </android.support.design.widget.CoordinatorLayout>
 
@@ -27,14 +27,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="bottom">
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:src="@drawable/ic_refresh" />
 
         <Button
-            android:id="@+id/btn_start"
-            android:layout_width="match_parent"
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="임의 문제 풀기 시작" />
+            android:layout_weight="7"
+            android:text="제출" />
     </LinearLayout>
 
 </android.support.v4.widget.DrawerLayout>
