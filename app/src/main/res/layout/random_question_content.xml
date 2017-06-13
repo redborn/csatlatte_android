@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="org.redborn.csatlatte.android.view.RandomQuestionActivity"
-    tools:showIn="@layout/random_question_app_bar">
+    tools:showIn="@layout/commons_app_bar">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -103,4 +103,5 @@
             </LinearLayout>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
+
 </android.support.constraint.ConstraintLayout>

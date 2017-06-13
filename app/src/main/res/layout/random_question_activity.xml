@@ -14,7 +14,7 @@
         tools:context="org.redborn.csatlatte.android.view.RandomQuestionActivity">
 
         <include
-            layout="@layout/random_question_app_bar"
+            layout="@layout/commons_app_bar"
             android:layout_width="match_parent"
             android:layout_height="180dp" />
 
@@ -22,19 +22,20 @@
 
     </android.support.design.widget.CoordinatorLayout>
 
-    <include layout="@layout/nav_view" />
+    <include layout="@layout/commons_nav_view" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="bottom">
+        android:gravity="bottom"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="임의 문제 풀기 시작" />
+            android:text="제출" />
     </LinearLayout>
 
 </android.support.v4.widget.DrawerLayout>

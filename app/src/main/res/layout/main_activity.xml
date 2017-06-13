@@ -14,14 +14,14 @@
         tools:context="org.redborn.csatlatte.android.view.MainActivity">
 
         <include
-            layout="@layout/app_bar_main"
+            layout="@layout/commons_app_bar"
             android:layout_width="match_parent"
             android:layout_height="180dp" />
 
-        <include layout="@layout/content_main" />
+        <include layout="@layout/main_content" />
 
     </android.support.design.widget.CoordinatorLayout>
 
-    <include layout="@layout/nav_view"/>
+    <include layout="@layout/commons_nav_view"/>
 
 </android.support.v4.widget.DrawerLayout>
