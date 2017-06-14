@@ -59,12 +59,12 @@ public class RandomQuestionTestActivity extends AppCompatActivity implements Nav
 
     @Override
     public void onClick(View view) {
+        int id = view.getId();
         Context context = getApplicationContext();
-        switch (view.getId()) {
-            case R.id.btn_submit:
-                Intent intent = new Intent(context, RandomQuestionResultActivity.class);
-                startActivity(intent);
-                break;
+
+        if (id == R.id.btn_submit) {
+            Intent intent = new Intent(context, RandomQuestionResultActivity.class);
+            startActivity(intent);
         }
     }
 }
