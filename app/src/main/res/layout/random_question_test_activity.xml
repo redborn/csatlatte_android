@@ -24,24 +24,6 @@
 
     <include layout="@layout/commons_nav_view" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:src="@drawable/ic_refresh" />
-
-        <Button
-            android:id="@+id/btn_submit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:text="제출" />
-    </LinearLayout>
+    <include layout="@layout/random_question_test_footer" />
 
 </android.support.v4.widget.DrawerLayout>
