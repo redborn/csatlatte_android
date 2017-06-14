@@ -1,5 +1,6 @@
 package org.redborn.csatlatte.android.view;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
@@ -14,8 +15,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+import org.redborn.csatlatte.android.view.commons.Navigation;
 
 import org.redborn.csatlatte.android.R;
+import org.redborn.csatlatte.android.view.commons.Navigation;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -26,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
         appBarLayout.setBackgroundResource(R.drawable.title);
 
@@ -49,32 +51,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         adapter.addItem(getResources().getDrawable(R.drawable.ic_menu_pencil), "임의 문제 풀기");
         adapter.addItem(getResources().getDrawable(R.drawable.ic_menu_info), "웹사이트 방문하기");
 
-        // 메인 메뉴 버튼 분기처리
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 ListData data = adapter.listData.get(i);
-                Toast.makeText(MainActivity.this, data.title, Toast.LENGTH_SHORT).show();
+                Context context = getApplicationContext();
+
+                if (data.title == "임의 문제 풀기") {
+                    Intent intent = new Intent(context, RandomQuestionActivity.class);
+                    startActivity(intent);
+                } else if (data.title == "웹사이트 방문하기") {
+
+                }
             }
         });
     }
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        // 좌측 navigation 메뉴 분기처리
-        if (id == R.id.nav_home) {
-            // intent...
-        } else if (id == R.id.nav_random_question) {
-            Intent intent = new Intent(MainActivity.this, RandomQuestionActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_settings) {
-
-        }
+        Intent intent = new Navigation().select(item, getApplicationContext());
+        startActivity(intent);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
         return true;
     }
 }

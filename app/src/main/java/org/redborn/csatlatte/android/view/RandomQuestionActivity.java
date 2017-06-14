@@ -1,9 +1,11 @@
 package org.redborn.csatlatte.android.view;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +19,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import org.redborn.csatlatte.android.R;
+import org.redborn.csatlatte.android.view.commons.Navigation;
 
 /**
  * Created by admin on 2017-06-07.
@@ -47,17 +50,24 @@ public class RandomQuestionActivity extends AppCompatActivity implements Navigat
     }
 
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        return false;
-    }
-
-    @Override
     public void onClick(View view) {
+        Context context = getApplicationContext();
         switch (view.getId()) {
             case R.id.btn_start:
-                Intent intent = new Intent(RandomQuestionActivity.this, RandomQuestionTestActivity.class);
+                Intent intent = new Intent(context, RandomQuestionTestActivity.class);
                 startActivity(intent);
                 break;
         }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        Intent intent = new Navigation().select(item, getApplicationContext());
+        startActivity(intent);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+
+        return true;
     }
 }
