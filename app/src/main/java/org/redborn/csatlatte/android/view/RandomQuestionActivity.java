@@ -51,12 +51,12 @@ public class RandomQuestionActivity extends AppCompatActivity implements Navigat
 
     @Override
     public void onClick(View view) {
+        int id = view.getId();
         Context context = getApplicationContext();
-        switch (view.getId()) {
-            case R.id.btn_start:
-                Intent intent = new Intent(context, RandomQuestionTestActivity.class);
-                startActivity(intent);
-                break;
+
+        if (id == R.id.btn_start) {
+            Intent intent = new Intent(context, RandomQuestionTestActivity.class);
+            startActivity(intent);
         }
     }
 
