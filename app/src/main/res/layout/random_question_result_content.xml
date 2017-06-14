@@ -12,10 +12,59 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context="org.redborn.csatlatte.android.view.RandomQuestionResultActivity"
-        tools:showIn="@layout/random_question_result_activity"
+        tools:context="org.redborn.csatlatte.android.view.RandomQuestionTestActivity"
+        tools:showIn="@layout/random_question_test_activity"
         tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="30dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/random_question_test_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="34. 다음 빈칸에 들어갈 말로 가장 적절한 것을 고르시오."/>
+
+                <TextView
+                    android:id="@+id/random_question_test_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="There is no known cure for the ills of ownership. As Adam Smith said, ownership is woven into our lives. But being aware of it might help. Everywhere around us we see the temptation to improve the quality of our lives by buying a larger home. a second car, a new dishwasher, a lawn mower."/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:padding="30dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="[출제의도] 글의 요지를 추론한다." />
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="해설 내용" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 

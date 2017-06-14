@@ -1,5 +1,6 @@
 package org.redborn.csatlatte.android.view;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
@@ -12,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import org.redborn.csatlatte.android.R;
 import org.redborn.csatlatte.android.view.commons.Navigation;
@@ -20,7 +22,7 @@ import org.redborn.csatlatte.android.view.commons.Navigation;
  * Created by admin on 2017-06-08.
  */
 
-public class RandomQuestionResultActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class RandomQuestionResultActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,12 @@ public class RandomQuestionResultActivity extends AppCompatActivity implements N
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        ImageButton btnResetting = (ImageButton) findViewById(R.id.btn_resetting);
+        Button btnOtherQuestion = (Button) findViewById(R.id.btn_other_question);
+
+        btnResetting.setOnClickListener(this);
+        btnOtherQuestion.setOnClickListener(this);
     }
 
     @Override
@@ -50,5 +58,22 @@ public class RandomQuestionResultActivity extends AppCompatActivity implements N
         drawer.closeDrawer(GravityCompat.START);
 
         return true;
+    }
+
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+        Context context = getApplicationContext();
+        Intent intent = null;
+
+        if (id == R.id.btn_resetting) {
+            intent = new Intent(context, RandomQuestionActivity.class);
+
+        } else if (id == R.id.btn_other_question) {
+            intent = new Intent(context, RandomQuestionTestActivity.class);
+
+        }
+
+        startActivity(intent);
     }
 }

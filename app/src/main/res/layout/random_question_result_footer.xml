@@ -6,13 +6,14 @@
     android:orientation="horizontal">
 
     <ImageButton
+        android:id="@+id/btn_resetting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="3"
         android:src="@drawable/ic_menu_settings" />
 
     <Button
-        android:id="@+id/btn_submit"
+        android:id="@+id/btn_other_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="7"
