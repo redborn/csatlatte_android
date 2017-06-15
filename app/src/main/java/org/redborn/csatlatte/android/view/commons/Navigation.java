@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import org.redborn.csatlatte.android.R;
+import org.redborn.csatlatte.android.view.LoginIdActivity;
 import org.redborn.csatlatte.android.view.MainActivity;
 import org.redborn.csatlatte.android.view.RandomQuestionActivity;
 import org.redborn.csatlatte.android.view.RandomQuestionResultActivity;
@@ -45,7 +46,7 @@ public class Navigation {
         Intent intent = null;
 
         if (id == R.id.nav_header_layout) {
-            intent = new Intent(context, RandomQuestionResultActivity.class);
+            intent = new Intent(context, LoginIdActivity.class);
         }
 
         return intent;
