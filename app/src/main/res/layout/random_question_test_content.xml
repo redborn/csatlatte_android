@@ -59,27 +59,27 @@
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="scientists admit to using false data" />
+                        android:text="① scientists admit to using false data" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="i want high level for english" />
+                        android:text="② i want high level for english" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="i do not know this mean" />
+                        android:text="③ i do not know this mean" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="i don't know you are" />
+                        android:text="④ i don't know you are" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="hello world!" />
+                        android:text="⑤ hello world!" />
                 </RadioGroup>
 
             </LinearLayout>
