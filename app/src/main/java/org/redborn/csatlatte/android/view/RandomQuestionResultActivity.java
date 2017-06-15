@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import org.redborn.csatlatte.android.R;
@@ -29,8 +30,8 @@ public class RandomQuestionResultActivity extends AppCompatActivity implements N
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.random_question_result_activity);
-        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
-        appBarLayout.setBackgroundResource(R.drawable.random_question_test_title);
+        ImageView appBarBackground = (ImageView) findViewById(R.id.app_bar_background);
+        appBarBackground.setImageResource(R.drawable.random_question_test_title);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -2,6 +2,7 @@ package org.redborn.csatlatte.android.view;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
@@ -32,8 +33,8 @@ public class RandomQuestionActivity extends AppCompatActivity implements Navigat
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.random_question_activity);
-        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
-        appBarLayout.setBackgroundResource(R.drawable.random_question_title);
+        ImageView appBarBackground = (ImageView) findViewById(R.id.app_bar_background);
+        appBarBackground.setImageResource(R.drawable.random_question_title);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
