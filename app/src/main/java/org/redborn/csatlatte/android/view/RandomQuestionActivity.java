@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -45,29 +46,39 @@ public class RandomQuestionActivity extends AppCompatActivity implements Navigat
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        View headerLayout = navigationView.getHeaderView(0);
+        LinearLayout linearLayout = (LinearLayout) headerLayout.findViewById(R.id.nav_header_layout);
+        linearLayout.setOnClickListener(this);
+
         Button btnStart = (Button) findViewById(R.id.btn_start);
         btnStart.setOnClickListener(this);
     }
 
     @Override
-    public void onClick(View view) {
-        int id = view.getId();
-        Context context = getApplicationContext();
-
-        if (id == R.id.btn_start) {
-            Intent intent = new Intent(context, RandomQuestionTestActivity.class);
-            startActivity(intent);
-        }
-    }
-
-    @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        Intent intent = new Navigation().select(item, getApplicationContext());
+        Intent intent = new Navigation(getApplicationContext()).select(item);
         startActivity(intent);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
 
         return true;
+    }
+
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+        Context context = getApplicationContext();
+        Intent intent = new Navigation(getApplicationContext()).header(view);
+
+        if (id == R.id.btn_start) {
+            intent = new Intent(context, RandomQuestionTestActivity.class);
+
+        }
+
+        startActivity(intent);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
     }
 }

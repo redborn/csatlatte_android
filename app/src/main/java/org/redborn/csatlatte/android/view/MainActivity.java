@@ -12,7 +12,9 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 import org.redborn.csatlatte.android.view.commons.Navigation;
@@ -20,7 +22,7 @@ import org.redborn.csatlatte.android.view.commons.Navigation;
 import org.redborn.csatlatte.android.R;
 import org.redborn.csatlatte.android.view.commons.Navigation;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private ListView listView = null;
     private ListViewAdapter adapter = null;
@@ -42,6 +44,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View headerLayout = navigationView.getHeaderView(0);
+        LinearLayout linearLayout = (LinearLayout) headerLayout.findViewById(R.id.nav_header_layout);
+        linearLayout.setOnClickListener(this);
 
         listView = (ListView) findViewById(R.id.listView);
 
@@ -69,12 +75,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        Intent intent = new Navigation().select(item, getApplicationContext());
+        Intent intent = new Navigation(getApplicationContext()).select(item);
         startActivity(intent);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
 
         return true;
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Navigation(getApplicationContext()).header(view);
+        startActivity(intent);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
     }
 }

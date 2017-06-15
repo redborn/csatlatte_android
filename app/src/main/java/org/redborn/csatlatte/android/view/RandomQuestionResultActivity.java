@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 import org.redborn.csatlatte.android.R;
 import org.redborn.csatlatte.android.view.commons.Navigation;
@@ -42,6 +43,10 @@ public class RandomQuestionResultActivity extends AppCompatActivity implements N
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        View headerLayout = navigationView.getHeaderView(0);
+        LinearLayout linearLayout = (LinearLayout) headerLayout.findViewById(R.id.nav_header_layout);
+        linearLayout.setOnClickListener(this);
+
         ImageButton btnResetting = (ImageButton) findViewById(R.id.btn_resetting);
         Button btnOtherQuestion = (Button) findViewById(R.id.btn_other_question);
 
@@ -51,7 +56,7 @@ public class RandomQuestionResultActivity extends AppCompatActivity implements N
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        Intent intent = new Navigation().select(item, getApplicationContext());
+        Intent intent = new Navigation(getApplicationContext()).select(item);
         startActivity(intent);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_result_drawer_layout);
@@ -64,7 +69,7 @@ public class RandomQuestionResultActivity extends AppCompatActivity implements N
     public void onClick(View view) {
         int id = view.getId();
         Context context = getApplicationContext();
-        Intent intent = null;
+        Intent intent = new Navigation(getApplicationContext()).header(view);
 
         if (id == R.id.btn_resetting) {
             intent = new Intent(context, RandomQuestionActivity.class);
@@ -75,5 +80,8 @@ public class RandomQuestionResultActivity extends AppCompatActivity implements N
         }
 
         startActivity(intent);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_result_drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
     }
 }

@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import org.redborn.csatlatte.android.R;
 import org.redborn.csatlatte.android.view.commons.Navigation;
@@ -42,13 +43,17 @@ public class RandomQuestionTestActivity extends AppCompatActivity implements Nav
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        View headerLayout = navigationView.getHeaderView(0);
+        LinearLayout linearLayout = (LinearLayout) headerLayout.findViewById(R.id.nav_header_layout);
+        linearLayout.setOnClickListener(this);
+
         Button btnSubmit = (Button) findViewById(R.id.btn_submit);
         btnSubmit.setOnClickListener(this);
     }
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        Intent intent = new Navigation().select(item, getApplicationContext());
+        Intent intent = new Navigation(getApplicationContext()).select(item);
         startActivity(intent);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_test_drawer_layout);
@@ -61,10 +66,15 @@ public class RandomQuestionTestActivity extends AppCompatActivity implements Nav
     public void onClick(View view) {
         int id = view.getId();
         Context context = getApplicationContext();
+        Intent intent = new Navigation(getApplicationContext()).header(view);
 
         if (id == R.id.btn_submit) {
-            Intent intent = new Intent(context, RandomQuestionResultActivity.class);
-            startActivity(intent);
+            intent = new Intent(context, RandomQuestionResultActivity.class);
         }
+
+        startActivity(intent);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_test_drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
     }
 }
