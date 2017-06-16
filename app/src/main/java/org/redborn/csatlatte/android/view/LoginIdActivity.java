@@ -69,7 +69,7 @@ public class LoginIdActivity extends AppCompatActivity implements NavigationView
         Intent intent = new Navigation(context).header(view);
 
         if (id == R.id.btn_login_next) {
-            intent = new Intent(context, MainActivity.class);
+            intent = new Intent(context, LoginPasswordActivity.class);
         }
 
         startActivity(intent);
