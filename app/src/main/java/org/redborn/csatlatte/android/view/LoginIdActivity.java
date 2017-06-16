@@ -48,18 +48,25 @@ public class LoginIdActivity extends AppCompatActivity implements NavigationView
         linearLayout.setOnClickListener(this);
 
         Button btnLoginNext = (Button) findViewById(R.id.btn_login_next);
+        Button btnJoin = (Button) findViewById(R.id.btn_join);
         btnLoginNext.setOnClickListener(this);
+        btnJoin.setOnClickListener(this);
     }
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        boolean result = false;
         Intent intent = new Navigation(getApplicationContext()).select(item);
-        startActivity(intent);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.login_id_drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        if (intent != null) {
+            result = true;
+            startActivity(intent);
 
-        return true;
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.login_id_drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+        }
+
+        return result;
     }
 
     @Override
@@ -70,11 +77,17 @@ public class LoginIdActivity extends AppCompatActivity implements NavigationView
 
         if (id == R.id.btn_login_next) {
             intent = new Intent(context, LoginPasswordActivity.class);
+
+        } else if (id == R.id.btn_join) {
+            intent = new Intent(context, JoinLoginInfoActivity.class);
+
         }
 
-        startActivity(intent);
+        if (intent != null) {
+            startActivity(intent);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.login_id_drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.login_id_drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+        }
     }
 }
