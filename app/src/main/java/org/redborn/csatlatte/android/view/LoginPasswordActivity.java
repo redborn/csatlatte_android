@@ -64,6 +64,8 @@ public class LoginPasswordActivity extends AppCompatActivity implements View.OnC
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         }
 
-        startActivity(intent);
+        if (intent != null) {
+            startActivity(intent);
+        }
     }
 }

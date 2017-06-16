@@ -53,13 +53,18 @@ public class RandomQuestionTestActivity extends AppCompatActivity implements Nav
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        boolean result = false;
         Intent intent = new Navigation(getApplicationContext()).select(item);
-        startActivity(intent);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_test_drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        if (intent != null) {
+            result = true;
+            startActivity(intent);
 
-        return true;
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_test_drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+        }
+
+        return result;
     }
 
     @Override
@@ -73,9 +78,11 @@ public class RandomQuestionTestActivity extends AppCompatActivity implements Nav
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         }
 
-        startActivity(intent);
+        if (intent != null) {
+            startActivity(intent);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_test_drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_test_drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+        }
     }
 }

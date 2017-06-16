@@ -57,13 +57,18 @@ public class RandomQuestionActivity extends AppCompatActivity implements Navigat
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        boolean result = false;
         Intent intent = new Navigation(getApplicationContext()).select(item);
-        startActivity(intent);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        if (intent != null) {
+            result = true;
+            startActivity(intent);
 
-        return true;
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+        }
+
+        return result;
     }
 
     @Override
@@ -77,9 +82,11 @@ public class RandomQuestionActivity extends AppCompatActivity implements Navigat
 
         }
 
-        startActivity(intent);
+        if (intent != null) {
+            startActivity(intent);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+        }
     }
 }

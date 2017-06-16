@@ -57,13 +57,18 @@ public class RandomQuestionResultActivity extends AppCompatActivity implements N
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        boolean result = false;
         Intent intent = new Navigation(getApplicationContext()).select(item);
-        startActivity(intent);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_result_drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        if (intent != null) {
+            result = true;
+            startActivity(intent);
 
-        return true;
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_result_drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+        }
+
+        return result;
     }
 
     @Override
