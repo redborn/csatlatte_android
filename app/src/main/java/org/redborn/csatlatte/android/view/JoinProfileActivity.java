@@ -79,7 +79,7 @@ public class JoinProfileActivity extends AppCompatActivity implements View.OnCli
 
         if (id == R.id.btn_join_complete) {
             intent = new Intent(context, JoinResultActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
         } else if (id == R.id.btn_profile_image_upload) {
             CharSequence[] items = {"사진촬영", "앨범선택", "취소"};
