@@ -68,7 +68,7 @@ public class JoinSecurityActivity extends AppCompatActivity implements View.OnCl
         Intent intent = new Navigation(context).header(view);
 
         if (id == R.id.btn_join_security_next) {
-
+            intent = new Intent(context, JoinProfileActivity.class);
         }
 
         if (intent != null) {
