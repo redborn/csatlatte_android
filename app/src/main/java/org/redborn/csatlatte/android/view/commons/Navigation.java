@@ -30,9 +30,11 @@ public class Navigation {
 
         if (id == R.id.nav_home) {
             intent = new Intent(context, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP|Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         } else if (id == R.id.nav_random_question) {
             intent = new Intent(context, RandomQuestionActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
         } else if (id == R.id.nav_settings) {
 
