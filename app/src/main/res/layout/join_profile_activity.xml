@@ -13,10 +13,7 @@
         android:layout_height="match_parent"
         tools:context="org.redborn.csatlatte.android.view.JoinProfileActivity">
 
-        <include
-            layout="@layout/commons_app_bar"
-            android:layout_width="match_parent"
-            android:layout_height="180dp" />
+        <include layout="@layout/commons_app_bar" />
 
         <include layout="@layout/join_profile_content" />
 
