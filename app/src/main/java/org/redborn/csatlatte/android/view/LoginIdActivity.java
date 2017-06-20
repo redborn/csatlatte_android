@@ -49,6 +49,8 @@ public class LoginIdActivity extends AppCompatActivity implements NavigationView
 
         Button btnLoginNext = (Button) findViewById(R.id.btn_login_next);
         Button btnJoin = (Button) findViewById(R.id.btn_join);
+        Button btnFindId = (Button) findViewById(R.id.btn_find_id);
+        btnFindId.setOnClickListener(this);
         btnLoginNext.setOnClickListener(this);
         btnJoin.setOnClickListener(this);
     }
@@ -80,6 +82,9 @@ public class LoginIdActivity extends AppCompatActivity implements NavigationView
 
         } else if (id == R.id.btn_join) {
             intent = new Intent(context, JoinLoginInfoActivity.class);
+
+        } else if (id == R.id.btn_find_id) {
+            intent = new Intent(context, FindIdActivity.class);
 
         }
 

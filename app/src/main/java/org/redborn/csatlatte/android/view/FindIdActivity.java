@@ -17,20 +17,34 @@ import org.redborn.csatlatte.android.view.commons.Navigation;
  * Created by admin on 2017-06-16.
  */
 
-public class FindPasswordResultActivity extends AppCompatActivity implements View.OnClickListener {
+public class FindIdActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.find_password_result_activity);
+        setContentView(R.layout.find_id_activity);
         ImageView appBarBackground = (ImageView) findViewById(R.id.app_bar_background);
         appBarBackground.setImageResource(R.drawable.find_title);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Button btnFindPasswordSuccess = (Button) findViewById(R.id.btn_find_password_success);
-        btnFindPasswordSuccess.setOnClickListener(this);
+        Button btnFindIdNickname = (Button) findViewById(R.id.btn_find_id_nickname);
+        btnFindIdNickname.setOnClickListener(this);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        boolean result = super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            onBackPressed();
+            result = true;
+        }
+
+        return result;
     }
 
     @Override
@@ -39,9 +53,8 @@ public class FindPasswordResultActivity extends AppCompatActivity implements Vie
         Context context = getApplicationContext();
         Intent intent = new Navigation(context).header(view);
 
-        if (id == R.id.btn_find_password_success) {
-            intent = new Intent(context, LoginIdActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        if (id == R.id.btn_find_id_nickname) {
+            intent = new Intent(context, FindIdSecurityActivity.class);
         }
 
         if (intent != null) {

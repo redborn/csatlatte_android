@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="org.redborn.csatlatte.android.view.LoginIdActivity"
+    tools:context="org.redborn.csatlatte.android.view.FindIdSecurityActivity"
     tools:showIn="@layout/commons_app_bar">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context="org.redborn.csatlatte.android.view.LoginIdActivity"
-        tools:showIn="@layout/login_id_activity"
+        tools:context="org.redborn.csatlatte.android.view.FindIdSecurityActivity"
+        tools:showIn="@layout/find_id_security_activity"
         tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="8dp">
 
@@ -22,17 +22,22 @@
             android:layout_height="wrap_content"
             android:background="@color/colorWhite"
             android:padding="30dp"
-            android:layout_marginTop="5dp"
             android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="당신의 꿈은 무엇인가요?"/>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="수능라떼 아이디"
+                    android:hint="보안답변"
                     android:maxLines="1"
                     android:ellipsize="end"
                     android:scrollHorizontally="true"
@@ -44,24 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorRed"
-                android:text="존재하지 않는 아이디입니다." />
-
-            <Button
-                android:id="@+id/btn_find_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:textColor="@color/colorPrimary"
-                android:text="아이디를 잊으셨나요?"
-                style="?android:attr/borderlessButtonStyle" />
-
-            <Button
-                android:id="@+id/btn_join"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorPrimary"
-                android:text="아직 아이디가 없으신가요?"
-                style="?android:attr/borderlessButtonStyle" />
+                android:text="보안답변이 올바르지 않습니다." />
 
         </LinearLayout>
 

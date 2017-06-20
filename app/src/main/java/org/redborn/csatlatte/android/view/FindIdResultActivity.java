@@ -17,20 +17,22 @@ import org.redborn.csatlatte.android.view.commons.Navigation;
  * Created by admin on 2017-06-16.
  */
 
-public class FindPasswordResultActivity extends AppCompatActivity implements View.OnClickListener {
+public class FindIdResultActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.find_password_result_activity);
+        setContentView(R.layout.find_id_result_activity);
         ImageView appBarBackground = (ImageView) findViewById(R.id.app_bar_background);
         appBarBackground.setImageResource(R.drawable.find_title);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button btnFindPasswordSuccess = (Button) findViewById(R.id.btn_find_password_success);
-        btnFindPasswordSuccess.setOnClickListener(this);
+        Button btnFindPassword = (Button) findViewById(R.id.btn_find_password);
+        Button btnFindIdResult = (Button) findViewById(R.id.btn_find_id_result);
+        btnFindPassword.setOnClickListener(this);
+        btnFindIdResult.setOnClickListener(this);
     }
 
     @Override
@@ -39,9 +41,10 @@ public class FindPasswordResultActivity extends AppCompatActivity implements Vie
         Context context = getApplicationContext();
         Intent intent = new Navigation(context).header(view);
 
-        if (id == R.id.btn_find_password_success) {
+        if (id == R.id.btn_find_password) {
+            intent = new Intent(context, FindPasswordActivity.class);
+        } else if (id == R.id.btn_find_id_result) {
             intent = new Intent(context, LoginIdActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
         }
 
         if (intent != null) {
