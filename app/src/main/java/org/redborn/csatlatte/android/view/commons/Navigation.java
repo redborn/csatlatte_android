@@ -11,6 +11,7 @@ import org.redborn.csatlatte.android.view.LoginIdActivity;
 import org.redborn.csatlatte.android.view.MainActivity;
 import org.redborn.csatlatte.android.view.RandomQuestionActivity;
 import org.redborn.csatlatte.android.view.RandomQuestionResultActivity;
+import org.redborn.csatlatte.android.view.SettingActivity;
 
 /**
  * Created by admin on 2017-06-14.
@@ -37,6 +38,8 @@ public class Navigation {
             intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
         } else if (id == R.id.nav_settings) {
+            intent = new Intent(context, SettingActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
         }
 
