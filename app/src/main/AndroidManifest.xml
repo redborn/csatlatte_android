@@ -32,6 +32,86 @@
             android:label="2016 6월 2학년 전국연합학력평가 - 영어"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.LoginIdActivity"
+            android:label="로그인"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.LoginPasswordActivity"
+            android:label="로그인"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.JoinLoginInfoActivity"
+            android:label="회원가입"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.JoinSecurityActivity"
+            android:label="회원가입"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.JoinProfileActivity"
+            android:label="회원가입"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.JoinResultActivity"
+            android:label="회원가입"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.FindPasswordActivity"
+            android:label="비밀번호 찾기"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.FindPasswordSecurityActivity"
+            android:label="비밀번호 찾기"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.FindPasswordResetActivity"
+            android:label="비밀번호 찾기"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.FindPasswordResultActivity"
+            android:label="비밀번호 찾기"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.FindIdActivity"
+            android:label="아이디 찾기"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.FindIdSecurityActivity"
+            android:label="아이디 찾기"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.FindIdResultActivity"
+            android:label="아이디 찾기"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.SettingActivity"
+            android:label="설정"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.SettingRandomQuestionActivity"
+            android:label="임의 문제 풀기 설정"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.SettingCopyrightActivity"
+            android:label="Copyright"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
