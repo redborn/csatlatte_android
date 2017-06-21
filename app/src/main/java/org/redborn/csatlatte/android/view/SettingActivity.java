@@ -64,8 +64,9 @@ public class SettingActivity extends AppCompatActivity implements AdapterView.On
 
         if (data.title == "임의 문제 풀기 설정") {
             intent = new Intent(context, SettingRandomQuestionActivity.class);
-        } else if (data.title == "Copyright") {
 
+        } else if (data.title == "Copyright") {
+            intent = new Intent(context, SettingCopyrightActivity.class);
         }
 
         if (intent != null) {
