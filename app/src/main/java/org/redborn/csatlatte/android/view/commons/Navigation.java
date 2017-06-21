@@ -9,6 +9,7 @@ import android.widget.Toast;
 import org.redborn.csatlatte.android.R;
 import org.redborn.csatlatte.android.view.LoginIdActivity;
 import org.redborn.csatlatte.android.view.MainActivity;
+import org.redborn.csatlatte.android.view.MyInfoActivity;
 import org.redborn.csatlatte.android.view.RandomQuestionActivity;
 import org.redborn.csatlatte.android.view.RandomQuestionResultActivity;
 import org.redborn.csatlatte.android.view.SettingActivity;
@@ -27,7 +28,7 @@ public class Navigation {
 
     public Intent select(MenuItem item) {
         int id = item.getItemId();
-        Intent intent = new Intent();
+        Intent intent = null;
 
         if (id == R.id.nav_home) {
             intent = new Intent(context, MainActivity.class);
@@ -39,6 +40,10 @@ public class Navigation {
 
         } else if (id == R.id.nav_settings) {
             intent = new Intent(context, SettingActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+        } else if (id == R.id.nav_myinfo) {
+            intent = new Intent(context, MyInfoActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
         }

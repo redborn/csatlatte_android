@@ -112,6 +112,11 @@
             android:label="Copyright"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.MyInfoActivity"
+            android:label="내 정보"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
