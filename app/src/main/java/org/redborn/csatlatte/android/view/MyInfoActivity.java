@@ -63,14 +63,20 @@ public class MyInfoActivity extends AppCompatActivity implements AdapterView.OnI
         Intent intent = null;
 
         if (data.title == "비밀번호 변경") {
+            intent = new Intent(context, MyInfoModifyPasswordActivity.class);
 
         } else if (data.title == "보안질문 변경") {
+            intent = new Intent(context, MyInfoModifySecurityActivity.class);
 
         } else if (data.title == "프로필 사진 및 닉네임 변경") {
+            intent = new Intent(context, MyInfoModifyProfileActivity.class);
 
         } else if (data.title == "수능 변경") {
+            intent = new Intent(context, MyInfoModifyCsatActivity.class);
 
         } else if (data.title == "로그아웃") {
+            intent = new Intent(context, LoginIdActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         }
 
