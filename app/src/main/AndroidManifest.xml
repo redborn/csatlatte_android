@@ -117,6 +117,26 @@
             android:label="내 정보"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.MyInfoModifyPasswordActivity"
+            android:label="비밀번호 변경"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.MyInfoModifySecurityActivity"
+            android:label="보안질문 변경"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.MyInfoModifyProfileActivity"
+            android:label="프로필 사진 및 닉네임 변경"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.MyInfoModifyCsatActivity"
+            android:label="수능 변경"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
