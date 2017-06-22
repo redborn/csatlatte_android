@@ -2,6 +2,7 @@ package org.redborn.csatlatte.android.view;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -23,7 +24,7 @@ import org.redborn.csatlatte.android.view.commons.Navigation;
 import org.redborn.csatlatte.android.R;
 import org.redborn.csatlatte.android.view.commons.Navigation;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ListView listView = null;
     private ListViewAdapter adapter = null;
@@ -58,20 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         adapter.addItem(getResources().getDrawable(R.drawable.ic_menu_pencil), "임의 문제 풀기");
         adapter.addItem(getResources().getDrawable(R.drawable.ic_menu_info), "웹사이트 방문하기");
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                ListData data = adapter.listData.get(i);
-                Context context = getApplicationContext();
-
-                if (data.title == "임의 문제 풀기") {
-                    Intent intent = new Intent(context, RandomQuestionActivity.class);
-                    startActivity(intent);
-                } else if (data.title == "웹사이트 방문하기") {
-
-                }
-            }
-        });
+        listView.setOnItemClickListener(this);
     }
 
     @Override
@@ -99,6 +87,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
+        }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        ListData data = adapter.listData.get(i);
+        Context context = getApplicationContext();
+        Intent intent = null;
+
+        if (data.title == "임의 문제 풀기") {
+            intent = new Intent(context, RandomQuestionActivity.class);
+
+        } else if (data.title == "웹사이트 방문하기") {
+            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.csatlatte.com"));
+
+        }
+
+        if (intent != null) {
+            startActivity(intent);
         }
     }
 }
