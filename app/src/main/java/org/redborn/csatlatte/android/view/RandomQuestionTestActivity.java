@@ -33,6 +33,7 @@ public class RandomQuestionTestActivity extends AppCompatActivity implements Nav
         appBarBackground.setImageResource(R.drawable.random_question_test_title);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("2016년 6월 2학년 전국연합학력평가 - 영어");
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_test_drawer_layout);

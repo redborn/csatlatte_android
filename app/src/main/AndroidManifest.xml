@@ -24,12 +24,12 @@
         </activity>
         <activity
             android:name="org.redborn.csatlatte.android.view.RandomQuestionTestActivity"
-            android:label="2016 6월 2학년 전국연합학력평가 - 영어"
+            android:label="임의 문제 풀기"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
             android:name="org.redborn.csatlatte.android.view.RandomQuestionResultActivity"
-            android:label="2016 6월 2학년 전국연합학력평가 - 영어"
+            android:label="임의 문제 풀기"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
