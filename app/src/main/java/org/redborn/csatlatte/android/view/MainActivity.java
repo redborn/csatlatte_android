@@ -48,8 +48,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         View headerLayout = navigationView.getHeaderView(0);
+
+        boolean isLogin = true; // 로그인 상태를 표시함, true = 로그인 상태 / false = 로그오프 상태, 화면 리뷰 이후 cache를 활용해서 처리 예정
+        LinearLayout navHeaderLayoutUser = (LinearLayout) headerLayout.findViewById(R.id.nav_header_layout_user);
         LinearLayout linearLayout = (LinearLayout) headerLayout.findViewById(R.id.nav_header_layout);
-        linearLayout.setOnClickListener(this);
+        if (isLogin) {
+            navHeaderLayoutUser.setOnClickListener(this);
+            linearLayout.setVisibility(LinearLayout.GONE);
+        } else {
+            navHeaderLayoutUser.setVisibility(LinearLayout.GONE);
+            linearLayout.setOnClickListener(this);
+        }
+
 
         listView = (ListView) findViewById(R.id.listView);
 

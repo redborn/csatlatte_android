@@ -42,10 +42,6 @@ public class Navigation {
             intent = new Intent(context, SettingActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
-        } else if (id == R.id.nav_myinfo) {
-            intent = new Intent(context, MyInfoActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-
         }
 
         return intent;
@@ -57,6 +53,10 @@ public class Navigation {
 
         if (id == R.id.nav_header_layout) {
             intent = new Intent(context, LoginIdActivity.class);
+
+        } else if (id == R.id.nav_header_layout_user) {
+            intent = new Intent(context, MyInfoActivity.class);
+
         }
 
         return intent;
