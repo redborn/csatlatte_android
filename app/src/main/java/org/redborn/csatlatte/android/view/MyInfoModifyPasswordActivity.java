@@ -55,7 +55,9 @@ public class MyInfoModifyPasswordActivity extends AppCompatActivity implements V
         Intent intent = new Navigation(getApplicationContext()).header(view);
 
         if (id == R.id.btn_myinfo_modify_password_complete) {
-            onBackPressed();
+            intent = new Intent(context, MyInfoActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            
         }
 
         if (intent != null) {

@@ -76,7 +76,7 @@ public class RandomQuestionTestActivity extends AppCompatActivity implements Nav
 
         if (id == R.id.btn_submit) {
             intent = new Intent(context, RandomQuestionResultActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         }
 
         if (intent != null) {

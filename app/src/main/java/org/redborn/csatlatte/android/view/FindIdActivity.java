@@ -55,6 +55,7 @@ public class FindIdActivity extends AppCompatActivity implements View.OnClickLis
 
         if (id == R.id.btn_find_id_nickname) {
             intent = new Intent(context, FindIdSecurityActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         }
 
         if (intent != null) {

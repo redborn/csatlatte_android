@@ -79,6 +79,7 @@ public class RandomQuestionActivity extends AppCompatActivity implements Navigat
 
         if (id == R.id.btn_start) {
             intent = new Intent(context, RandomQuestionTestActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
 
         }
 

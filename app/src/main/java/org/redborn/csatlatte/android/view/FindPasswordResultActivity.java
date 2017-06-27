@@ -41,7 +41,7 @@ public class FindPasswordResultActivity extends AppCompatActivity implements Vie
 
         if (id == R.id.btn_find_password_success) {
             intent = new Intent(context, LoginIdActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         }
 
         if (intent != null) {

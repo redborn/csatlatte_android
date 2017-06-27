@@ -65,7 +65,9 @@ public class MyInfoModifyCsatActivity extends AppCompatActivity implements View.
         Intent intent = new Navigation(getApplicationContext()).header(view);
 
         if (id == R.id.btn_myinfo_modify_csat_complete) {
-            onBackPressed();
+            intent = new Intent(context, MyInfoActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
         }
 
         if (intent != null) {

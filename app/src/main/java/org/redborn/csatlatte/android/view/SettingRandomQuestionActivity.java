@@ -56,7 +56,8 @@ public class SettingRandomQuestionActivity extends AppCompatActivity implements 
 
         if (id == R.id.btn_setting_random_question_complete) {
             intent = new Intent(context, SettingActivity.class);
-            finish();
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
         }
 
         if (intent != null) {

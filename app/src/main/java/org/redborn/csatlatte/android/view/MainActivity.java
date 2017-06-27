@@ -108,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (data.title == "임의 문제 풀기") {
             intent = new Intent(context, RandomQuestionActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
 
         } else if (data.title == "웹사이트 방문하기") {
             intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.csatlatte.com"));

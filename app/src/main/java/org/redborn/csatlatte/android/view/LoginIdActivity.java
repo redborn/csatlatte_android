@@ -85,6 +85,7 @@ public class LoginIdActivity extends AppCompatActivity implements NavigationView
 
         } else if (id == R.id.btn_find_id) {
             intent = new Intent(context, FindIdActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
 
         }
 

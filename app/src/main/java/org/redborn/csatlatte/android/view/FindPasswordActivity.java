@@ -59,6 +59,7 @@ public class FindPasswordActivity extends AppCompatActivity implements View.OnCl
 
         if (id == R.id.btn_find_password_id) {
             intent = new Intent(context, FindPasswordSecurityActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         }
 
         if (intent != null) {

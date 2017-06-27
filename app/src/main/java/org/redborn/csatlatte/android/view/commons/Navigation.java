@@ -37,6 +37,7 @@ public class Navigation {
         } else if (id == R.id.nav_random_question) {
             intent = new Intent(context, RandomQuestionActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
 
         } else if (id == R.id.nav_settings) {
             intent = new Intent(context, SettingActivity.class);

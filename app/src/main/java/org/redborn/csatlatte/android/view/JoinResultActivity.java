@@ -46,7 +46,7 @@ public class JoinResultActivity extends AppCompatActivity implements View.OnClic
 
         if (id == R.id.btn_join_success) {
             intent = new Intent(context, MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         }
 
         if (intent != null) {

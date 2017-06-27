@@ -61,7 +61,9 @@ public class MyInfoModifyProfileActivity extends AppCompatActivity implements Vi
         Intent intent = new Navigation(getApplicationContext()).header(view);
 
         if (id == R.id.btn_myinfo_modify_profile_complete) {
-            onBackPressed();
+            intent = new Intent(context, MyInfoActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
         } else if (id == R.id.btn_myinfo_modify_profile_image) {
             CharSequence[] items = {"사진촬영", "앨범선택", "취소"};
 

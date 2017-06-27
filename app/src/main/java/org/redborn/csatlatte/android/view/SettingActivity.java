@@ -67,6 +67,7 @@ public class SettingActivity extends AppCompatActivity implements AdapterView.On
 
         } else if (data.title == "Copyright") {
             intent = new Intent(context, SettingCopyrightActivity.class);
+
         }
 
         if (intent != null) {

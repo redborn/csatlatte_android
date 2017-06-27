@@ -55,6 +55,7 @@ public class FindIdSecurityActivity extends AppCompatActivity implements View.On
 
         if (id == R.id.btn_find_id_security) {
             intent = new Intent(context, FindIdResultActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         }
 
         if (intent != null) {

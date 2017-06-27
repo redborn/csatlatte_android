@@ -43,8 +43,11 @@ public class FindIdResultActivity extends AppCompatActivity implements View.OnCl
 
         if (id == R.id.btn_find_password) {
             intent = new Intent(context, FindPasswordActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+
         } else if (id == R.id.btn_find_id_result) {
             intent = new Intent(context, LoginIdActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         }
 
         if (intent != null) {

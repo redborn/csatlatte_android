@@ -80,9 +80,11 @@ public class RandomQuestionResultActivity extends AppCompatActivity implements N
 
         if (id == R.id.btn_resetting) {
             intent = new Intent(context, RandomQuestionActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
 
         } else if (id == R.id.btn_other_question) {
             intent = new Intent(context, RandomQuestionTestActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
 
         }
 

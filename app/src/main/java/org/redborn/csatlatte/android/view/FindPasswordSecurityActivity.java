@@ -55,6 +55,7 @@ public class FindPasswordSecurityActivity extends AppCompatActivity implements V
 
         if (id == R.id.btn_find_password_security) {
             intent = new Intent(context, FindPasswordResetActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         }
 
         if (intent != null) {
