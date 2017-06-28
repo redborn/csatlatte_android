@@ -8,11 +8,134 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="org.redborn.csatlatte.android.view.MainActivity">
+        <activity
+            android:name="org.redborn.csatlatte.android.view.MainActivity"
+            android:label="@string/csatlatte"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.RandomQuestionActivity"
+            android:label="@string/menu_random_question"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.RandomQuestionTestActivity"
+            android:label="임의 문제 풀기"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.RandomQuestionResultActivity"
+            android:label="임의 문제 풀기"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.LoginIdActivity"
+            android:label="로그인"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.LoginPasswordActivity"
+            android:label="로그인"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.JoinLoginInfoActivity"
+            android:label="회원가입"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.JoinSecurityActivity"
+            android:label="회원가입"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.JoinProfileActivity"
+            android:label="회원가입"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.JoinResultActivity"
+            android:label="회원가입"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.FindPasswordActivity"
+            android:label="비밀번호 찾기"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.FindPasswordSecurityActivity"
+            android:label="비밀번호 찾기"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.FindPasswordResetActivity"
+            android:label="비밀번호 찾기"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.FindPasswordResultActivity"
+            android:label="비밀번호 찾기"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.FindIdActivity"
+            android:label="아이디 찾기"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.FindIdSecurityActivity"
+            android:label="아이디 찾기"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.FindIdResultActivity"
+            android:label="아이디 찾기"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.SettingActivity"
+            android:label="설정"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.SettingRandomQuestionActivity"
+            android:label="임의 문제 풀기 설정"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.SettingCopyrightActivity"
+            android:label="Copyright"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.MyInfoActivity"
+            android:label="내 정보"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.MyInfoModifyPasswordActivity"
+            android:label="비밀번호 변경"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.MyInfoModifySecurityActivity"
+            android:label="보안질문 변경"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.MyInfoModifyProfileActivity"
+            android:label="프로필 사진 및 닉네임 변경"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="org.redborn.csatlatte.android.view.MyInfoModifyCsatActivity"
+            android:label="수능 변경"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 

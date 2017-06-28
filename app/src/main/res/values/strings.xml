@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">수능라떼</string>
+    <string name="app_name">My Application</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="csatlatte">수능라떼</string>
+
+    <string name="menu_home">수능라뗴 홈</string>
+    <string name="menu_random_question">임의 문제 풀기</string>
+    <string name="menu_settings">설정</string>
+    <string name="menu_visit_web">웹사이트 방문하기</string>
+
+    <string name="login_message">로그인이 필요합니다.</string>
+    <string name="login_continue">로그인을 계속하시려면 여기를 누르세요.</string>
 </resources>
