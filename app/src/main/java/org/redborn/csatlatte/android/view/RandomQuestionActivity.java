@@ -2,9 +2,7 @@ package org.redborn.csatlatte.android.view;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,21 +11,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import org.redborn.csatlatte.android.R;
-import org.redborn.csatlatte.android.view.commons.Navigation;
+import org.redborn.csatlatte.android.view.commons.CsatlatteActivity;
 
 /**
  * Created by admin on 2017-06-07.
  */
 
-public class RandomQuestionActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+public class RandomQuestionActivity extends CsatlatteActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,26 +51,10 @@ public class RandomQuestionActivity extends AppCompatActivity implements Navigat
     }
 
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        boolean result = false;
-        Intent intent = new Navigation(getApplicationContext()).select(item);
-
-        if (intent != null) {
-            result = true;
-            startActivity(intent);
-
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_drawer_layout);
-            drawer.closeDrawer(GravityCompat.START);
-        }
-
-        return result;
-    }
-
-    @Override
     public void onClick(View view) {
         int id = view.getId();
         Context context = getApplicationContext();
-        Intent intent = new Navigation(getApplicationContext()).header(view);
+        Intent intent = navigationHeader(context, view);
 
         if (id == R.id.btn_start) {
             intent = new Intent(context, RandomQuestionTestActivity.class);
@@ -85,9 +64,6 @@ public class RandomQuestionActivity extends AppCompatActivity implements Navigat
 
         if (intent != null) {
             startActivity(intent);
-
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.random_question_drawer_layout);
-            drawer.closeDrawer(GravityCompat.START);
         }
     }
 }

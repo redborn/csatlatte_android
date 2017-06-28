@@ -7,12 +7,13 @@ import android.view.MenuItem;
 import android.widget.ListView;
 
 import org.redborn.csatlatte.android.R;
+import org.redborn.csatlatte.android.view.commons.CsatlatteActivity;
 
 /**
  * Created by admin on 2017-06-21.
  */
 
-public class SettingCopyrightActivity extends AppCompatActivity {
+public class SettingCopyrightActivity extends CsatlatteActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,18 +23,5 @@ public class SettingCopyrightActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        boolean result = super.onOptionsItemSelected(item);
-        int id = item.getItemId();
-
-        if (id == android.R.id.home) {
-            onBackPressed();
-            result = true;
-        }
-
-        return result;
     }
 }

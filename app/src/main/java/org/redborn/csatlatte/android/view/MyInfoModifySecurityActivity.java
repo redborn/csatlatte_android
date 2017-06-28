@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import org.redborn.csatlatte.android.R;
-import org.redborn.csatlatte.android.view.commons.Navigation;
+import org.redborn.csatlatte.android.view.commons.CsatlatteActivity;
 
 import java.util.ArrayList;
 
@@ -20,7 +20,7 @@ import java.util.ArrayList;
  * Created by admin on 2017-06-21.
  */
 
-public class MyInfoModifySecurityActivity extends AppCompatActivity implements View.OnClickListener {
+public class MyInfoModifySecurityActivity extends CsatlatteActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,23 +46,10 @@ public class MyInfoModifySecurityActivity extends AppCompatActivity implements V
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        boolean result = super.onOptionsItemSelected(item);
-        int id = item.getItemId();
-
-        if (id == android.R.id.home) {
-            onBackPressed();
-            result = true;
-        }
-
-        return result;
-    }
-
-    @Override
     public void onClick(View view) {
         int id = view.getId();
         Context context = getApplicationContext();
-        Intent intent = new Navigation(getApplicationContext()).header(view);
+        Intent intent = null;
 
         if (id == R.id.btn_myinfo_modify_security_complete) {
             intent = new Intent(context, MyInfoActivity.class);

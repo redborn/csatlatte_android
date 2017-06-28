@@ -11,12 +11,15 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import org.redborn.csatlatte.android.R;
+import org.redborn.csatlatte.android.view.commons.CsatlatteActivity;
+import org.redborn.csatlatte.android.view.commons.ListData;
+import org.redborn.csatlatte.android.view.commons.ListViewAdapter;
 
 /**
  * Created by admin on 2017-06-21.
  */
 
-public class MyInfoActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class MyInfoActivity extends CsatlatteActivity implements AdapterView.OnItemClickListener {
 
     private ListView myinfoListView = null;
     private ListViewAdapter adapter = null;
@@ -44,19 +47,6 @@ public class MyInfoActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        boolean result = super.onOptionsItemSelected(item);
-        int id = item.getItemId();
-
-        if (id == android.R.id.home) {
-            onBackPressed();
-            result = true;
-        }
-
-        return result;
-    }
-
-    @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         ListData data = adapter.listData.get(i);
         Context context = getApplicationContext();
@@ -76,7 +66,7 @@ public class MyInfoActivity extends AppCompatActivity implements AdapterView.OnI
 
         } else if (data.title == "로그아웃") {
             intent = new Intent(context, LoginIdActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
         }
 
@@ -84,5 +74,4 @@ public class MyInfoActivity extends AppCompatActivity implements AdapterView.OnI
             startActivity(intent);
         }
     }
-
 }

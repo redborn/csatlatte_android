@@ -3,7 +3,6 @@ package org.redborn.csatlatte.android.view;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,18 +12,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import org.redborn.csatlatte.android.R;
-import org.redborn.csatlatte.android.view.commons.Navigation;
+import org.redborn.csatlatte.android.view.commons.CsatlatteActivity;
 
 /**
  * Created by admin on 2017-06-15.
  */
 
-public class LoginIdActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+public class LoginIdActivity extends CsatlatteActivity implements View.OnClickListener {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,26 +55,10 @@ public class LoginIdActivity extends AppCompatActivity implements NavigationView
     }
 
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        boolean result = false;
-        Intent intent = new Navigation(getApplicationContext()).select(item);
-
-        if (intent != null) {
-            result = true;
-            startActivity(intent);
-
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.login_id_drawer_layout);
-            drawer.closeDrawer(GravityCompat.START);
-        }
-
-        return result;
-    }
-
-    @Override
     public void onClick(View view) {
         int id = view.getId();
         Context context = getApplicationContext();
-        Intent intent = new Navigation(context).header(view);
+        Intent intent = navigationHeader(context, view);
 
         if (id == R.id.btn_login_next) {
             intent = new Intent(context, LoginPasswordActivity.class);
@@ -91,9 +74,6 @@ public class LoginIdActivity extends AppCompatActivity implements NavigationView
 
         if (intent != null) {
             startActivity(intent);
-
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.login_id_drawer_layout);
-            drawer.closeDrawer(GravityCompat.START);
         }
     }
 }

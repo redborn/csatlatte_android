@@ -1,4 +1,4 @@
-package org.redborn.csatlatte.android.view;
+package org.redborn.csatlatte.android.view.commons;
 
 import android.graphics.drawable.Drawable;
 

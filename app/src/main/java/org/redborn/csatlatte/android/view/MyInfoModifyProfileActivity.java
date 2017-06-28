@@ -16,7 +16,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import org.redborn.csatlatte.android.R;
-import org.redborn.csatlatte.android.view.commons.Navigation;
+import org.redborn.csatlatte.android.view.commons.CsatlatteActivity;
 
 import java.io.File;
 
@@ -24,7 +24,7 @@ import java.io.File;
  * Created by admin on 2017-06-21.
  */
 
-public class MyInfoModifyProfileActivity extends AppCompatActivity implements View.OnClickListener {
+public class MyInfoModifyProfileActivity extends CsatlatteActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,23 +42,10 @@ public class MyInfoModifyProfileActivity extends AppCompatActivity implements Vi
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        boolean result = super.onOptionsItemSelected(item);
-        int id = item.getItemId();
-
-        if (id == android.R.id.home) {
-            onBackPressed();
-            result = true;
-        }
-
-        return result;
-    }
-
-    @Override
     public void onClick(View view) {
         int id = view.getId();
         Context context = getApplicationContext();
-        Intent intent = new Navigation(getApplicationContext()).header(view);
+        Intent intent = null;
 
         if (id == R.id.btn_myinfo_modify_profile_complete) {
             intent = new Intent(context, MyInfoActivity.class);
@@ -93,21 +80,5 @@ public class MyInfoModifyProfileActivity extends AppCompatActivity implements Vi
         if (intent != null) {
             startActivity(intent);
         }
-    }
-
-    public void shootingNewPhoto() {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-        String url = "tmp_" + String.valueOf(System.currentTimeMillis()) + "jpg";
-        Uri imageCaptureUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), url));
-
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageCaptureUri);
-        startActivityForResult(intent, 1);
-    }
-
-    public void takeAlbumPhoto() {
-        Intent intent = new Intent(Intent.ACTION_PICK);
-        intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
-        startActivityForResult(intent, 2);
     }
 }

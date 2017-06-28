@@ -8,18 +8,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 import org.redborn.csatlatte.android.R;
-import org.redborn.csatlatte.android.view.commons.Navigation;
+import org.redborn.csatlatte.android.view.commons.CsatlatteActivity;
+import org.redborn.csatlatte.android.view.commons.ListData;
+import org.redborn.csatlatte.android.view.commons.ListViewAdapter;
 
 /**
  * Created by admin on 2017-06-16.
  */
 
-public class SettingActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class SettingActivity extends CsatlatteActivity implements AdapterView.OnItemClickListener {
 
     private ListView settingListView = null;
     private ListViewAdapter adapter = null;
@@ -41,19 +41,6 @@ public class SettingActivity extends AppCompatActivity implements AdapterView.On
         adapter.addItem(getResources().getDrawable(R.drawable.ic_copyright), "Copyright");
 
         settingListView.setOnItemClickListener(this);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        boolean result = super.onOptionsItemSelected(item);
-        int id = item.getItemId();
-
-        if (id == android.R.id.home) {
-            onBackPressed();
-            result = true;
-        }
-
-        return result;
     }
 
     @Override

@@ -3,28 +3,25 @@ package org.redborn.csatlatte.android.view;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.Toast;
-import org.redborn.csatlatte.android.view.commons.Navigation;
+
+import org.redborn.csatlatte.android.view.commons.CsatlatteActivity;
+import org.redborn.csatlatte.android.view.commons.ListData;
+import org.redborn.csatlatte.android.view.commons.ListViewAdapter;
 
 import org.redborn.csatlatte.android.R;
-import org.redborn.csatlatte.android.view.commons.Navigation;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, AdapterView.OnItemClickListener {
+public class MainActivity extends CsatlatteActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ListView listView = null;
     private ListViewAdapter adapter = null;
@@ -60,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             linearLayout.setOnClickListener(this);
         }
 
-
         listView = (ListView) findViewById(R.id.listView);
 
         adapter = new ListViewAdapter(this);
@@ -73,30 +69,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        boolean result = false;
-        Intent intent = new Navigation(getApplicationContext()).select(item);
-
-        if (intent != null) {
-            result = true;
-            startActivity(intent);
-
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            drawer.closeDrawer(GravityCompat.START);
-        }
-
-        return result;
-    }
-
-    @Override
     public void onClick(View view) {
-        Intent intent = new Navigation(getApplicationContext()).header(view);
+        Context context = getApplicationContext();
+        Intent intent = navigationHeader(context, view);
 
         if (intent != null) {
             startActivity(intent);
-
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            drawer.closeDrawer(GravityCompat.START);
         }
     }
 
@@ -108,7 +86,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (data.title == "임의 문제 풀기") {
             intent = new Intent(context, RandomQuestionActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
 
         } else if (data.title == "웹사이트 방문하기") {
             intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.csatlatte.com"));
